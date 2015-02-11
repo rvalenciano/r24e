@@ -1,15 +1,16 @@
+
 Rails.application.routes.draw do
   # login
-  get 'login' => 'user_sessions#new', :as => :login
-  get 'logout' => 'user_sessions#destroy', :as => :logout
-
+  get 'login' => 'user_sessions#new', as:  'login'
+  get 'logout' => 'user_sessions#destroy', as: 'logout'
   get 'about_us/index', as: 'about_us'
-  get 'welcome/index'
+  get 'welcome/index', as: 'welcome'
   get 'contact/index', as: 'contact' 
-  resources :articles
-  resources :users
+  resources :users, :user_sessions
   root 'welcome#index'
-
+  resources :articles
+  mount RailsAdmin::Engine => '/admin'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

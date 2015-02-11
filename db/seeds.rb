@@ -7,11 +7,16 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-User.create({ :username => "Randy", 
-	          :email => "ravf.226@gmail.com", 
-	          :password => "admin12345", 
-	          :password_confirmation => "admin12345"})
-
+User.create({ })
+u = User.new(
+      :username => "Randy", 
+      :email => "ravf.226@gmail.com", 
+      :password => "admin12345", 
+      :password_confirmation => "admin12345",
+      :active => true,
+      :admin => true
+)
+u.save(validate: false)
 
 # Test user accounts
 (1..50).each do |i|
@@ -21,7 +26,7 @@ User.create({ :username => "Randy",
       password: "1234",
       password_confirmation: "1234"
   )
-  u.save!
+  u.save(validate: false)
 
   puts "#{i} test users created..." if (i % 5 == 0)
 

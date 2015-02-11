@@ -31,11 +31,17 @@ gem 'rails_admin'
 
 # Authlogic
 gem 'authlogic'
-
+# can can
+gem 'cancan'
+# Alternative to Captcha
+gem 'humanizer'
 #UI
 gem 'twitter-bootstrap-rails'
 gem 'bootstrap-material-design'
-
+#Google Mpas
+gem 'gmaps4rails'
+# Underscore Rails
+gem 'underscore-rails'
 
 group :development do
   gem 'capistrano-rails'
@@ -66,5 +72,6 @@ group :development, :test do
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'faker'
+  gem 'pry'
 end
 

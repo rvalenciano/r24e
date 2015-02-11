@@ -1,24 +1,59 @@
-
-<form class="col-md-12">
-    <br>
-    <br>
-    <br>
-    <div class="form-group">
-        <input type="text" class="form-control input-lg" placeholder="Email">
+</br>
+<div class="col-md-8 center-block" style="float: none; top: 10%;">
+    <div class="well bs-component">
+    <%= form_for(@user, :class =>'form-horizontal') do |f| %>
+    <fieldset>
+    <legend><%= form_name %></legend>
+    </br>
+    </br>
+     <%= errors_for(@user, 'user') %>
+    <fieldset>
+      <div class="form-group">
+        <%= f.label :username, :class => 'col-lg-2 control-label' %>
+         <div class="col-lg-10"><div class="form-control-wrapper">
+            <%= f.text_field :username, :class => 'form-control input-lg'  %>
+        </div><span class="material-input"></span></div>
+      </div>
+    </br>
+    </br>
+      <div class="form-group">
+        <%= f.label :email, :class => 'col-lg-2 control-label'  %>
+        <div class="col-lg-10"><div class="form-control-wrapper">
+          <%= f.text_field :email, :class => 'form-control input-lg' %>
+        </div><span class="material-input"></span></div>
+      </div>
+      </br>
+      </br>
+      <div class="form-group">
+        <%= f.label :password, :class => 'col-lg-2 control-label' %>
+        <div class="col-lg-10"><div class="form-control-wrapper">
+          <%= f.password_field :password, :class => 'form-control input-lg' %>
+        </div><span class="material-input"></span></div>
+      </div>
+      </br>
+      </br>
+      <div class="form-group">
+          <%= f.label :password_confirmation, :class => 'col-lg-2 control-label' %>
+          <div class="col-lg-10"><div class="form-control-wrapper">
+            <%= f.password_field :password_confirmation , :class => 'form-control input-lg' %>
+          </div><span class="material-input"></span></div>
+      </div>
+      </br>
+      </br>
+      <div class="form-group">
+          <%= f.label :humanizer_answer, @user.humanizer_question, :class => 'col-lg-2 control-label' %>
+          <div class="col-lg-10"><div class="form-control-wrapper">
+            <%= f.text_field :humanizer_answer, :class => 'form-control input-lg' %>
+            <%= f.hidden_field :humanizer_question_id %>
+          </div><span class="material-input"></span></div>
+      </div>
+      </br>
+      </br>
+      </br>
+      <div class="form-group">
+        <%= f.submit :class => 'btn btn-primary center-block', :style => 'margin: 0 auto; float: right;' %>
+      </div>
+      </fieldset>
+    <% end %>
     </div>
-    <br>
-    <div class="form-group">
-        <input type="password" class="form-control input-lg" placeholder="Password">
-    </div>
-    <br>
-    <div class="form-group">
-        <input type="password" class="form-control input-lg" placeholder="Confirm Password">
-    </div>
-    <br>
-    <div class="form-group">
-        <button class="btn btn-primary btn-lg btn-block">Sign In</button>
-        <span><a href="#">Need help?</a></span>
-        <span class="pull-right"><a href="#">New Registration</a></span>
-    </div>
-</form>
-
+</div>

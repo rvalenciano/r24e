@@ -1,25 +1,34 @@
-<%= form_for(@user_session) do |f| %>
-  <% if @user_session.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user_session.errors.count, "error") %> prohibited this user_session from being saved:</h2>
-
-      <ul>
-      <% @user_session.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+</br>
+<div class="col-md-8 center-block" style="float: none; top: 10%;">
+    <div class="well bs-component">
+    <%= form_for(@user_session, :class =>'form-horizontal') do |f| %>
+    <fieldset>
+    <legend><%= form_name %></legend>
+    </br>
+    </br>
+      <%= errors_for(@user_session) %>
+    <fieldset>
+      <div class="form-group">
+        <%= f.label :username, :class => 'col-lg-2 control-label' %>
+         <div class="col-lg-10"><div class="form-control-wrapper">
+            <%= f.text_field :username, :class => 'form-control input-lg'  %>
+        </div><span class="material-input"></span></div>
+      </div>
+    </br>
+    </br>
+      <div class="form-group">
+        <%= f.label :password, :class => 'col-lg-2 control-label' %>
+        <div class="col-lg-10"><div class="form-control-wrapper">
+          <%= f.password_field :password, :class => 'form-control input-lg' %>
+        </div><span class="material-input"></span></div>
+      </div>
+      </br>
+      </br>
+      </br>
+      <div class="form-group">
+        <%= f.submit form_name, :class => 'btn btn-primary center-block', :style => 'margin: 0 auto; float: right;' %>
+      </div>
+      </fieldset>
+    <% end %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :username %><br>
-    <%= f.text_field :username %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br>
-    <%= f.text_field :password %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
