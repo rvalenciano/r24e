@@ -1,0 +1,10 @@
+/* line 5, /home/ravf/Documents/aptana_workspace/r24e/app/assets/stylesheets/about_us.scss */
+#map img {
+  max-width: none;
+}
+
+/* line 8, /home/ravf/Documents/aptana_workspace/r24e/app/assets/stylesheets/about_us.scss */
+#map label {
+  width: auto;
+  display: inline;
+}
