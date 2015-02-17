@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bus Intelligence API</title>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+  <![endif]-->
+  <link href="/assets/application-967f4720edd3d6990f9af4a3633db769.css" media="all" rel="stylesheet" />
+  <script src="/assets/application-9bcf0044734e7f77bb3412000051c5b0.js"></script>
+  <meta content="authenticity_token" name="csrf-param" />
+<meta content="xLK/O1+G6FisSeEolWqS0xFXdTpX9x9oUWOeuWXtINM=" name="csrf-token" />
+  <link href="/assets/favicon-1df5f49b60ba343eb07ba651883131dd.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="#">Bus Intelligence API!</a>
+        <div class="nav-collapse">
+          <ul class="nav">
+				 <li> <a class="navbar-link" href="/users/sign_in">Login</a></li>
+			  	<li><a href="/users/sign_in">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="span9"><h2>Sign in</h2>
+
+<form accept-charset="UTF-8" action="/users/sign_in" class="new_user" id="new_user" method="post"><div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="xLK/O1+G6FisSeEolWqS0xFXdTpX9x9oUWOeuWXtINM=" /></div>
+  <div><label for="user_email">Email</label><br />
+  <input autofocus="autofocus" id="user_email" name="user[email]" type="email" value="" /></div>
+
+  <div><label for="user_password">Password</label><br />
+    <input autocomplete="off" id="user_password" name="user[password]" type="password" /></div>
+
+    <div><input name="user[remember_me]" type="hidden" value="0" /><input id="user_remember_me" name="user[remember_me]" type="checkbox" value="1" /> <label for="user_remember_me">Remember me</label></div>
+
+  <div><input name="commit" type="submit" value="Sign in" /></div>
+</form>
+
+
+
+
+
+
+</div>
+      <div class="span3">
+        <div class="jumbotron well">
+          <h1>About Us</h1><h4>by Randall Valenciano</h4>
+          <p>Bus Intelligence API contains all the api endpoints and its administration.</p>
+         <p><button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  API Endpoints!
+</button></p>
+        </div>
+        <br>
+       <img alt="Bus" class="img-thumbnail" height="70" src="/assets/bus-d8784aafd4e14c4c666742349096c6eb.png" width="70" /> 
+
+      </div>
+    </div>
+
+     <div class="modal fade" id="myModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only"></span></button>
+                <h4 class="modal-title">API Endpoints</h4>
+              </div>
+              <div class="modal-body">
+
+                <p>Requires authentication!</p>
+                <br>
+                <div class="well"><h4>Empresa</h4><p><ul>Parámetros: <br><li>Id: Integer (Opcional), id de la empresa autobusera.</li><br>
+                <li>Nombre : String (Opcional), nombre de la empresa autobusera.</li>
+                <br><li>Si no se proporciona parámetros, devuelve todas las empresas.</li></ul></p></div>
+
+                <div class="well"><h4>Rutas</h4><p><ul>Parámetros: <br><li>Id: Integer (Opcional), id de la ruta.</li><br>
+                <li>NombreRuta : String (Opcional), nombre de la ruta.</li>
+                <br><li>Si no se proporciona parámetros, devuelve todas las rutas.</li></ul></p></div>
+
+                 <div class="well"><h4>Paradas</h4><p><ul>Parámetros: <br><li>lat: Float (Requerido), Latitud del punto a buscarle una parada cercana.</li><br>
+                <li>long: Float (Requerido), Longitud del punto a buscarle una parada cercana.</li>
+                <br><li>Si no se proporciona parámetros, devuelve todas las paradas.</li></ul></p></div>
+
+
+                 <div class="well"><h4>Segmento</h4><p><ul>Parámetros: <br><li>lat: Float (Requerido), Latitud del punto a buscarle un segmento cercano.</li><br>
+                <li>long: Float (Requerido), Longitud del punto a buscarle un segmento cercano.</li>
+                <br><li>Si no se proporciona parámetros, devuelve todos los segmentos.</li></ul></p></div>
+              </div><!-- /.modal-body -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                
+              </div><!-- /.modal-footer -->
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+  </div>
+  
+
+</body>
+</html>

@@ -1,8 +1,26 @@
-<div>
-  <% flash.each do |key, value| %>
-    <div class="<%= flash_class(key) %> fade in">
-      <a href="#" data-dismiss="alert" class="close">×</a>
-      <%= value %>
+<% if flash.keys.size > 0 %>
+     <div class="modal" id="flash-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Notice</h4>
+            </div>
+            <div class="modal-body">
+                <% flash.each do |name, msg| %>
+                   <%= msg %>
+                 </br>
+                <% end %>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
     </div>
-  <% end %>
 </div>
+<script>
+  $('#flash-modal').modal('show');
+</script>
+<% end %>
+    
+

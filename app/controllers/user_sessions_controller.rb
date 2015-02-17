@@ -32,7 +32,6 @@ class UserSessionsController < ApplicationController
   def destroy
     @user_session = UserSession.find
     @user_session.destroy
-
     respond_to do |format|
       format.html { redirect_to(:welcome, :notice => 'Goodbye!') }
       format.xml  { head :ok }

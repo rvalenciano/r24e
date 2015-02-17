@@ -15,3 +15,15 @@
  *= require bootstrap-material-design
  */
 
+.fade {
+    height: 0;
+    padding: 0;
+    margin: 0;
+    -webkit-transition:height .15s linear;
+    transition:height .15s linear;
+}
+.fade.in {
+    height: auto;
+    padding: 15px;
+    margin-bottom: 20px;
+}
